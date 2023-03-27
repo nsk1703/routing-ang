@@ -1,0 +1,30 @@
+<div class="row">
+  <div class="col-xs-12 col-sm-4">
+    <div class="list-group">
+      <!-- <button class="btn btn-primary" (click)="onReload()">Reload Page</button> -->
+      <!-- On crée le lien avec son parametre, on lui a ajoute un queryParams
+      qui s'affiche dans l'url '?nomParam=valeur'  et un fragment
+      qui s'affiche #nomFragment-->
+      <!-- [queryParams] peut etre utile pour agir sur un element, selon la valeur de un de ses attributs -->
+      <a
+        [routerLink]="['/servers', server.id]"
+        [queryParams]="{allowEdit: server.id === 3 ? '1' : '0'}"
+        fragment="upgrading"
+        href="#"
+        class="list-group-item"
+        *ngFor="let server of servers"
+      >
+        {{ server.name }}
+      </a>
+    </div> 
+  </div>
+  <div class="col-xs-12 col-sm-4">
+    <!-- Ici nous affichons tous les composants fils a la route de celui-ci, car ils ont leur propre route
+    et dependent de la route de leur pere, donc leur router-outlet devrait etre a l'affichage de leur parent -->
+    <router-outlet></router-outlet>
+    <!-- <app-edit-server></app-edit-server>
+    <hr> -->
+    <!-- <app-server></app-server> -->
+  </div>
+</div>
+

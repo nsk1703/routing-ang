@@ -1,0 +1,50 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
+      <ul class="nav nav-tabs">
+		<!-- routerLinkActiveOptions permet de definir le menu d'accueil actif si aucun
+		autre menu est actif
+		routerLinkActive permet de definir un menu actif apres selection-->
+        <li role="presentation"
+			[routerLinkActiveOptions]="{exact: true}" 
+			routerLinkActive="active">
+          <a routerLink="">
+            Home
+          </a>
+        </li>
+        <li role="presentation"
+			routerLinkActive="active">
+			<a routerLink="/servers">
+				Servers
+			</a>
+		</li>
+        <li role="presentation"
+			routerLinkActive="active">
+      <!-- routerLink peut prendre des parametres qui sont les donnees d'une URL -->
+			<a [routerLink]="['/users']">
+				Users
+			</a>
+		</li>
+      </ul>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
+      <!-- <app-home></app-home> -->
+      <!-- Permet d'afficher des composants selon leur route renseignés dans le app.module 
+      Ici il renseigne tous les composants puisse que nous sommes dans le AppComponent qui est dans la 
+    racine du projet -->
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+  <!-- <div class="row">
+    <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
+      <app-users></app-users>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
+      <app-servers></app-servers>
+    </div>
+  </div> -->
+</div>
